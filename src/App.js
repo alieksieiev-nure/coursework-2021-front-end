@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import RouterConfig from './navigation/RouterConfig';
+import 'fontsource-roboto';
+
 
 function App() {
   return (
