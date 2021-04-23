@@ -1,5 +1,6 @@
 import { Route, Switch } from "react-router";
 import Login from "../components/LoginComponent.jsx";
+import Registration from "../components/RegistrationComponent.jsx";
 import { REGISTRATION } from "./CONSTANTS.jsx";
 import { LOGIN } from "./CONSTANTS.jsx";
 import { ROOT } from "./CONSTANTS.jsx";
@@ -12,7 +13,7 @@ export const RouterConfig = () => {
                 {/* PUBLIC ROUTES */}
                 <Route exact path={ROOT} component={ null } />
                 <Route path={LOGIN}><Login/></Route>
-                <Route path={REGISTRATION}></Route>
+                <Route path={REGISTRATION}><Registration/></Route>
 
                 {/* 404-Not Found */}
                 <Route path="*">
