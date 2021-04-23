@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import RouterConfig from './navigation/RouterConfig';
-import 'fontsource-roboto';
 import { BrowserRouter } from 'react-router-dom';
+import 'rsuite/dist/styles/rsuite-default.css';
 
 
 function App() {

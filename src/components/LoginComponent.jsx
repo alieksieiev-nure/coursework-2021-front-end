@@ -1,7 +1,5 @@
-import { green, lightGreen } from "@material-ui/core/colors";
 import { Component } from "react";
 import { Form, Col, Row, Input, Label, Button } from 'reactstrap';
-import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
 import { LogIn } from "../data/authorization";
 
@@ -16,8 +14,6 @@ class Login extends Component {
             loginData: "",
             passwordData: ""
         };
-
-        const local = {};
 
         this.fetchLogin = this.fetchLogin.bind(this);
     }

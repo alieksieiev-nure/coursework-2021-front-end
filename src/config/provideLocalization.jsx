@@ -6,7 +6,7 @@ export const GetLocal = () => {
 
     if (local === undefined) {
         return enLang;
-    } else if (local == "en") {
+    } else if (local === "en") {
         return enLang;
     }
 }

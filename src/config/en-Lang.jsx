@@ -6,5 +6,10 @@ export const enLang = {
     fullName: "Full Name",
     email: "Email",
     phoneNumber: "Phone Number",
-    register: "Register"
+    register: "Register",
+    securityToken: "Security Token",
+    role: "Role",
+    creationDate: "Creation Date",
+    edit: "Edit",
+    remove: "Remove"
 }
