@@ -18,5 +18,13 @@ export const enLang = {
     editing: "Editing",
     addNew: "Add New Record",
     something: "Something",
-    action: "Action"
+    action: "Action",
+    address: "Address",
+    locationName: "Location Name",
+    messageAddNewSuccess: "The record has been added",
+    messageAddNewFailure: "Something got wrong. The record has not been added",
+    messageUpdateSuccess: "The record has been updated",
+    messageUpdateFailure: "Something got wrong. The record has not been updated",
+    messageRemoveSuccess: "The record has been deleted",
+    messageRemoveFailure: "Something got wrong. The record has not been deleted",
 }

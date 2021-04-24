@@ -5,6 +5,8 @@ import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
 import { ToastContainer, toast } from 'react-toastify';
 
+const { Column, HeaderCell, Cell } = Table;
+
 class SomePattern extends Component {
     constructor(props) {
         super(props);
@@ -35,17 +37,27 @@ class SomePattern extends Component {
 
     //#region Data_Actions
     removeData(event) {
+        event.preventDefault();
 
+        window.location.href = "/somewhere";
     }
 
     updateData(event) {
+        event.preventDefault();
 
+        window.location.href = "/somewhere";
     }
 
     addNewData(event) {
+        event.preventDefault();
 
+        window.location.href = "/somewhere";
     }
     //#endregion Data_Actions
+
+    //#region Handle_Changes
+
+    //#endregion Handle_Changes
 
     //#region  Toggle_Modals
     toggleRemoveModal(record) {

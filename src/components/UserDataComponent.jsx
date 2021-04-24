@@ -5,7 +5,6 @@ import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
 import { ToastContainer, toast } from 'react-toastify';
 
-
 const { Column, HeaderCell, Cell } = Table;
 
 class UserData extends Component {

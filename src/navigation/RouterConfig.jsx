@@ -1,8 +1,9 @@
 import { Route, Switch } from "react-router";
+import LocationData from "../components/LocationDataComponent.jsx";
 import Login from "../components/LoginComponent.jsx";
 import Registration from "../components/RegistrationComponent.jsx";
 import UserData from "../components/UserDataComponent.jsx";
-import { REGISTRATION, USER_DATA } from "./CONSTANTS.jsx";
+import { LOCATION_DATA, REGISTRATION, USER_DATA } from "./CONSTANTS.jsx";
 import { LOGIN } from "./CONSTANTS.jsx";
 import { ROOT } from "./CONSTANTS.jsx";
 import { NotFound } from "./NotFound.jsx";
@@ -17,6 +18,7 @@ export const RouterConfig = () => {
                 <Route path={REGISTRATION}><Registration/></Route>
 
                 <Route path={USER_DATA}><UserData/></Route>
+                <Route path={LOCATION_DATA}><LocationData/></Route>
 
                 {/* 404-Not Found */}
                 <Route path="*">
