@@ -27,4 +27,6 @@ export const enLang = {
     messageUpdateFailure: "Something got wrong. The record has not been updated",
     messageRemoveSuccess: "The record has been deleted",
     messageRemoveFailure: "Something got wrong. The record has not been deleted",
+    userId: "User Id",
+    locationId: "Location Id"
 }
