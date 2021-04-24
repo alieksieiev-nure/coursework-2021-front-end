@@ -1,5 +1,7 @@
+import axios from "axios";
 import { Component } from "react";
 import { Form, Col, Row, Input, Label, Button } from 'reactstrap';
+import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
 import { LogIn } from "../data/authorization";
 
@@ -38,7 +40,27 @@ class Login extends Component {
 
     fetchLogin(event) {
         event.preventDefault();
-        LogIn(this.state.loginData, this.state.passwordData);
+        var payload = {
+            Login: this.state.loginData,
+            Password: this.state.passwordData
+        }
+        // axios.post(baseUrl + "Authenfication/Login", payload);
+        fetch(baseUrl + "Authenfication/Login", {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            headers: {
+                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+            credentials: 'include'
+        })
+        .then(response => {
+            if (response.ok) {
+                event.preventDefault();
+            } else {
+                window.location.href = "/login";
+            }
+        })
     }
 
     render() {
@@ -77,7 +99,7 @@ class Login extends Component {
                                             />
                                         </Col>
                                     </Row>
-                                    <Button className="mt-3" color="primary">{local.signIn}</Button>
+                                    <Button type="submit" className="mt-3" color="primary">{local.signIn}</Button>
                                 </Col>
                             </Form>
                         </Col>

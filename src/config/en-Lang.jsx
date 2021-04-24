@@ -11,5 +11,10 @@ export const enLang = {
     role: "Role",
     creationDate: "Creation Date",
     edit: "Edit",
-    remove: "Remove"
+    remove: "Remove",
+    acceptRemoveTitle: "Are you sure you want to delete this entry?",
+    acceptRemoveMessage: "You will not be able to recover deleted data.",
+    cancel: "Cancel",
+    editing: "Editing",
+    addNew: "Add New Record"
 }

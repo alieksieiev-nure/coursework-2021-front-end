@@ -11,13 +11,8 @@ export const LogIn = (loginData, passwordData) => {
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json; charset=UTF-8'
-        },
-        credentials: 'same-origin'
+        }
     })
-        .then(response => response.json())
-        .then(response => {
-            console.log(response);
-        });
 }
 
 export const Register = (login, password, fullName, email, phoneNumber) => {
