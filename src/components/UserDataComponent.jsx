@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Table } from 'rsuite';
-import { Button, ModalFooter, ModalBody, ModalHeader, Modal, Form, Row, Col, Label, Input, Alert } from 'reactstrap';
+import { Button, ModalFooter, ModalBody, ModalHeader, Modal, Form, Row, Col, Label, Input } from 'reactstrap';
 import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
 import { ToastContainer, toast } from 'react-toastify';
@@ -35,13 +35,31 @@ class UserData extends Component {
         this.toggleUpdateModal = this.toggleUpdateModal.bind(this);
         this.toggleNewModal = this.toggleNewModal.bind(this);
 
+        this.removeData = this.removeData.bind(this);
         this.updateData = this.updateData.bind(this);
+        this.addNewData = this.addNewData.bind(this);
     }
 
-    //#region Data Actions
-    updateData(event) {
-        event.preventDefault();
+    //#region Data_Actions
+    removeData(event) {
+        fetch(baseUrl + "User/Delete/" + this.state.selectedId, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+            credentials: 'include'
+        })
+            .then((response) => {
+                if (response.ok) {
+                    toast.success("The record has been deleted");
+                } else {
+                    toast.error("Something got wrong. The record has not been deleted")
+                }
+            });
+    }
 
+    updateData(event) {
         var payload = {
             id: this.state.selectedId,
             login: this.state.selectedLogin,
@@ -50,7 +68,7 @@ class UserData extends Component {
             email: this.state.selectedEmail,
             phoneNumber: this.state.selectedPhone,
             role: this.state.selectedRole,
-            token: this.state.selectedToken,
+            securityToken: this.state.selectedToken,
             creationDate: this.state.selectedDate
         }
 
@@ -61,17 +79,51 @@ class UserData extends Component {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json; charset=UTF-8'
             },
-            credentials: 'same-origin'
+            credentials: 'include'
         })
-            .then(response => {
+            .then((response) => {
                 if (response.ok) {
-                    toast("Record has been updated");
+                    console.log("The record has been updated");
                 } else {
-                    toast("Record has been updated");
-                    return(<Alert color="danger">Something got wrong! Recode has not been updated</Alert>)
+                    console.log("Something got wrong. The record has not been updated")
                 }
             });
     }
+
+    addNewData(event) {
+        event.preventDefault();
+        var payload = {
+            id: 0,
+            login: this.state.selectedLogin,
+            password: this.state.selectedPassword,
+            fullName: this.state.selectedFullName,
+            email: this.state.selectedEmail,
+            phoneNumber: this.state.selectedPhone,
+            role: parseInt(this.state.selectedRole),
+            securityToken: this.state.selectedToken,
+            creationDate: new Date().toJSON()
+        }
+
+        fetch(baseUrl + "User/Post", {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+            credentials: 'include'
+        })
+            .then((response) => {
+                if (response.ok) {
+                    toast.success("The record has been added");
+                } else {
+                    console.log("Something got wrong. The record has not been added")
+                }
+            });
+        setInterval(1000);
+        window.location.href = "/userdata";
+    }
+    //#endregion Data_Actions
 
     componentDidMount() {
         fetch(baseUrl + "User/Get", {
@@ -80,7 +132,7 @@ class UserData extends Component {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json; charset=UTF-8'
             },
-            credentials: 'same-origin'
+            credentials: 'include'
         })
             .then(response => response.json())
             .then(
@@ -180,7 +232,7 @@ class UserData extends Component {
                     <div>
                         <Modal fade={false} isOpen={this.state.isRemoveModalOpen} toggle={this.toggleRemoveModal}>
                             <ModalHeader>{local.acceptRemoveTitle}</ModalHeader>
-                            <Form onSubmit={() => this.removeData()}>
+                            <Form onSubmit={(event) => this.removeData(event)}>
                                 <ModalBody>
                                     <Row className="form-group">
                                         <Label htmlFor="id" md={12}>{local.acceptRemoveMessage}</Label>
@@ -464,9 +516,6 @@ class UserData extends Component {
 
                             <Cell>
                                 {rowData => {
-                                    function handleAction() {
-                                        alert(`id:${rowData.id}`);
-                                    }
                                     return (
                                         <span>
                                             <span onClick={() => this.toggleUpdateModal(rowData)}> {local.edit} </span> |
@@ -477,6 +526,7 @@ class UserData extends Component {
                             </Cell>
                         </Column>
                     </Table>
+                    <ToastContainer />
                 </div>
             );
         } else {

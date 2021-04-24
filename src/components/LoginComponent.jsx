@@ -1,9 +1,7 @@
-import axios from "axios";
 import { Component } from "react";
 import { Form, Col, Row, Input, Label, Button } from 'reactstrap';
 import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
-import { LogIn } from "../data/authorization";
 
 
 class Login extends Component {

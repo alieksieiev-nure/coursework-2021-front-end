@@ -16,5 +16,7 @@ export const enLang = {
     acceptRemoveMessage: "You will not be able to recover deleted data.",
     cancel: "Cancel",
     editing: "Editing",
-    addNew: "Add New Record"
+    addNew: "Add New Record",
+    something: "Something",
+    action: "Action"
 }
