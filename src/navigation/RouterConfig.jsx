@@ -4,10 +4,11 @@ import Login from "../components/LoginComponent.jsx";
 import Registration from "../components/RegistrationComponent.jsx";
 import UserData from "../components/UserDataComponent.jsx";
 import LocationOwnerData from "../components/LocationOwnerDataComponent.jsx";
-import { LOCATION_DATA, LOCATION_OWNER_DATA, REGISTRATION, USER_DATA } from "./CONSTANTS.jsx";
+import { LOCATION_DATA, LOCATION_OWNER_DATA, REGISTRATION, THEME_DATA, USER_DATA } from "./CONSTANTS.jsx";
 import { LOGIN } from "./CONSTANTS.jsx";
 import { ROOT } from "./CONSTANTS.jsx";
 import { NotFound } from "./NotFound.jsx";
+import ThemeData from "../components/ThemeDataComponent.jsx";
 
 export const RouterConfig = () => {
     return (
@@ -21,6 +22,7 @@ export const RouterConfig = () => {
                 <Route path={USER_DATA}><UserData/></Route>
                 <Route path={LOCATION_DATA}><LocationData/></Route>
                 <Route path={LOCATION_OWNER_DATA}><LocationOwnerData/></Route>
+                <Route path={THEME_DATA}><ThemeData/></Route>
 
                 {/* 404-Not Found */}
                 <Route path="*">

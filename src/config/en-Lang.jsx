@@ -28,5 +28,8 @@ export const enLang = {
     messageRemoveSuccess: "The record has been deleted",
     messageRemoveFailure: "Something got wrong. The record has not been deleted",
     userId: "User Id",
-    locationId: "Location Id"
+    locationId: "Location Id",
+    themeId: "Theme Id",
+    title: "Title",
+    description: "Description"
 }
