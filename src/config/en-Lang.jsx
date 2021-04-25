@@ -43,5 +43,14 @@ export const enLang = {
     timeOfLastUse: "Time of last use",
     logId: "Usage Log Id",
     startTime: "Start Time",
-    endTime: "End Time"
+    endTime: "End Time",
+    sunday: "Sunday",
+    monday: "Monday",
+    tuesday: "Tuesday",
+    wednesday: "Wednesday",
+    thursday: "Thursday",
+    friday: "Friday",
+    saturday: "Saturday",
+    scheduleId: "Schedule Id",
+    dayOfWeek: "Day of week"
 }
