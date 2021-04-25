@@ -35,5 +35,10 @@ export const enLang = {
     orderId: "Order Id",
     message: "Message",
     orderStatus: "Order Status",
-    senderId: "Sender Id"
+    senderId: "Sender Id",
+    lockerId: "Locker Id",
+    lockerToken: "Locker Token",
+    isClosed: "Is closed",
+    isEnabled: "Is enabled",
+    timeOfLastUse: "Time of last use"
 }
