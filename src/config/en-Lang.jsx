@@ -31,5 +31,9 @@ export const enLang = {
     locationId: "Location Id",
     themeId: "Theme Id",
     title: "Title",
-    description: "Description"
+    description: "Description",
+    orderId: "Order Id",
+    message: "Message",
+    orderStatus: "Order Status",
+    senderId: "Sender Id"
 }
