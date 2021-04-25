@@ -40,5 +40,8 @@ export const enLang = {
     lockerToken: "Locker Token",
     isClosed: "Is closed",
     isEnabled: "Is enabled",
-    timeOfLastUse: "Time of last use"
+    timeOfLastUse: "Time of last use",
+    logId: "Usage Log Id",
+    startTime: "Start Time",
+    endTime: "End Time"
 }
