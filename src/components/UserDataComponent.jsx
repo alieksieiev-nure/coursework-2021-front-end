@@ -60,13 +60,13 @@ class UserData extends Component {
 
     updateData(event) {
         var payload = {
-            id: this.state.selectedId,
+            id: parseInt(this.state.selectedId),
             login: this.state.selectedLogin,
             password: this.state.selectedPassword,
             fullName: this.state.selectedFullName,
             email: this.state.selectedEmail,
             phoneNumber: this.state.selectedPhone,
-            role: this.state.selectedRole,
+            role: parseInt(this.state.selectedRole),
             securityToken: this.state.selectedToken,
             creationDate: this.state.selectedDate
         }
