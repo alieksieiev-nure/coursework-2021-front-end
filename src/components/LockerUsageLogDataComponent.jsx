@@ -354,28 +354,29 @@ class LockerUsageLogData extends Component {
                         onRowClick={data => {
                             console.log(data);
                         }}
+                        wordWrap
                     >
-                        <Column width={90} align="center" fixed>
+                        <Column width={150} align="center" fixed>
                             <HeaderCell>{local.logId}</HeaderCell>
                             <Cell dataKey="id" />
                         </Column>
                         
-                        <Column width={70}>
+                        <Column width={105}>
                             <HeaderCell>{local.userId}</HeaderCell>
                             <Cell dataKey="userId" />
                         </Column>
 
-                        <Column width={70}>
+                        <Column width={100}>
                             <HeaderCell>{local.lockerId}</HeaderCell>
                             <Cell dataKey="lockerId" />
                         </Column>
 
-                        <Column width={210}>
+                        <Column width={250}>
                             <HeaderCell>{local.startTime}</HeaderCell>
                             <Cell dataKey="startTime" />
                         </Column>
 
-                        <Column width={210}>
+                        <Column width={250}>
                             <HeaderCell>{local.endTime}</HeaderCell>
                             <Cell dataKey="endTime" />
                         </Column>

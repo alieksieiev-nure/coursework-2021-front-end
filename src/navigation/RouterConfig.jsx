@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 import LocationData from "../components/LocationDataComponent.jsx";
 import Login from "../components/LoginComponent.jsx";
 import Registration from "../components/RegistrationComponent.jsx";
@@ -20,8 +20,6 @@ export const RouterConfig = () => {
             <Switch>
                 {/* PUBLIC ROUTES */}
                 <Route exact path={ROOT} component={null} />
-                <Route path={LOGIN}><Login /></Route>
-                <Route path={REGISTRATION}><Registration /></Route>
 
                 <Route path={USER_DATA}><UserData /></Route>
                 <Route path={LOCATION_DATA}><LocationData /></Route>

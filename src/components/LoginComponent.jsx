@@ -1,4 +1,6 @@
+import Cookies from "js-cookie";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import { Form, Col, Row, Input, Label, Button } from 'reactstrap';
 import { baseUrl } from "../config/baseUrl";
 import { GetLocal } from "../config/provideLocalization";
@@ -55,6 +57,8 @@ class Login extends Component {
         .then(response => {
             if (response.ok) {
                 event.preventDefault();
+                Cookies.set('secret', '1');
+                window.location.href = "/userdata";
             } else {
                 window.location.href = "/login";
             }
@@ -67,7 +71,7 @@ class Login extends Component {
             return (
                 <div>
                     <Row className="d-flex" style={{flex: 1}}>
-                        <Col className="text-center" md={{size: 6}} style={{backgroundColor: "lightgreen", padding:0,margin:0}}></Col>
+                        <Col className="text-center" md={{size: 6}} style={{minHeight:"950px", backgroundColor: "lightgreen", padding:0,margin:0}}></Col>
                         <Col className="mt-5 text-center" md={{ size: 4, offset: 1 }}>
                             <Form className="mt-5" onSubmit={(event) => this.fetchLogin(event)}>
                                 <h3>{local.signIn}</h3>
@@ -98,6 +102,7 @@ class Login extends Component {
                                         </Col>
                                     </Row>
                                     <Button type="submit" className="mt-3" color="primary">{local.signIn}</Button>
+                                    <Link to="/register"><Button className="mt-3 ml-5" color="success">{local.register}</Button></Link>
                                 </Col>
                             </Form>
                         </Col>

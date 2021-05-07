@@ -296,6 +296,7 @@ class LocationOwnerData extends Component {
                         onRowClick={data => {
                             console.log(data);
                         }}
+                        wordWrap
                     >
                         <Column width={100} align="center" fixed>
                             <HeaderCell>{local.userId}</HeaderCell>

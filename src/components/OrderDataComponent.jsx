@@ -367,13 +367,14 @@ class OrderData extends Component {
                         onRowClick={data => {
                             console.log(data);
                         }}
+                        wordWrap
                     >
-                        <Column width={70} align="center" fixed>
+                        <Column width={100} align="center" fixed>
                             <HeaderCell>{local.orderId}</HeaderCell>
                             <Cell dataKey="id" />
                         </Column>
 
-                        <Column width={80}>
+                        <Column width={110}>
                             <HeaderCell>{local.senderId}</HeaderCell>
                             <Cell dataKey="senderId" />
                         </Column>
@@ -383,17 +384,17 @@ class OrderData extends Component {
                             <Cell dataKey="themeId" />
                         </Column>
 
-                        <Column width={700}>
+                        <Column width={600}>
                             <HeaderCell>{local.message}</HeaderCell>
                             <Cell dataKey="message" />
                         </Column>
 
-                        <Column width={90}>
+                        <Column width={150}>
                             <HeaderCell>{local.orderStatus}</HeaderCell>
                             <Cell dataKey="orderStatus" />
                         </Column>
 
-                        <Column width={210}>
+                        <Column width={250}>
                             <HeaderCell>{local.creationDate}</HeaderCell>
                             <Cell dataKey="creationDate" />
                         </Column>

@@ -386,8 +386,9 @@ class ScheduleData extends Component {
                         onRowClick={data => {
                             console.log(data);
                         }}
+                        wordWrap
                     >
-                        <Column width={70} align="center" fixed>
+                        <Column width={90} align="center" fixed>
                             <HeaderCell>{local.scheduleId}</HeaderCell>
                             <Cell dataKey="id" />
                         </Column>
@@ -402,12 +403,12 @@ class ScheduleData extends Component {
                             <Cell dataKey="dayOfWeek" />
                         </Column>
 
-                        <Column width={100}>
+                        <Column width={105}>
                             <HeaderCell>{local.startTime}</HeaderCell>
                             <Cell dataKey="startTime" />
                         </Column>
 
-                        <Column width={100}>
+                        <Column width={105}>
                             <HeaderCell>{local.endTime}</HeaderCell>
                             <Cell dataKey="endTime" />
                         </Column>

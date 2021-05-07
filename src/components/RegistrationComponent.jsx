@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import { Button, Col, Form, Input, Label, Row } from "reactstrap";
 import { GetLocal } from "../config/provideLocalization";
 import { Register } from "../data/authorization";
@@ -74,7 +75,7 @@ class Registration extends Component {
             return (
                 <div>
                     <Row>
-                        <Col className="text-center" md={{ size: 6 }} style={{ backgroundColor: "green", padding: 0, margin: 0 }}></Col>
+                        <Col className="text-center" md={{ size: 6 }} style={{ minHeight:"1000px", backgroundColor: "green", padding: 0, margin: 0 }}></Col>
                         <Col className="mt-5 text-center" md={{ size: 4, offset: 1 }}>
                             <Form method="POST" onSubmit={(event) => this.fetchRegister(event)} className="mt-5">
                                 <h3>{local.registration}</h3>
@@ -143,6 +144,7 @@ class Registration extends Component {
                                         </Col>
                                     </Row>
                                     <Button className="mt-3" color="primary">{local.register}</Button>
+                                    <Link to="/login"><Button className="mt-3 ml-5" color="success">{local.signIn}</Button></Link>
                                 </Col>
                             </Form>
                         </Col>

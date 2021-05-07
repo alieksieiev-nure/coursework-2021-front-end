@@ -459,14 +459,15 @@ class UserData extends Component {
                     </div>
                     <Button color="success" className="mt-2 mb-2 ml-1" onClick={this.toggleNewModal}>+ {local.addNew}</Button>
                     <Table
-                        height={400}
+                        height={window.screen.height - 100}
                         data={this.state.data}
                         onRowClick={data => {
                             console.log(data);
                         }}
+                        wordWrap
                     >
-                        <Column width={70} align="center" fixed>
-                            <HeaderCell>Id</HeaderCell>
+                        <Column width={105} align="center" fixed>
+                            <HeaderCell>{local.userId}</HeaderCell>
                             <Cell dataKey="id" />
                         </Column>
 
@@ -511,7 +512,7 @@ class UserData extends Component {
                         </Column>
 
                         <Column width={120} fixed="right">
-                            <HeaderCell>Action</HeaderCell>
+                            <HeaderCell>{local.action}</HeaderCell>
 
                             <Cell>
                                 {rowData => {

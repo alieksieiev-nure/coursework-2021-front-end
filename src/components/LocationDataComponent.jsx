@@ -287,9 +287,10 @@ class LocationData extends Component {
                         onRowClick={data => {
                             console.log(data);
                         }}
+                        wordWrap
                     >
-                        <Column width={70} align="center" fixed>
-                            <HeaderCell>{local.id}</HeaderCell>
+                        <Column width={105} align="center" fixed>
+                            <HeaderCell>{local.locationId}</HeaderCell>
                             <Cell dataKey="id" />
                         </Column>
 
