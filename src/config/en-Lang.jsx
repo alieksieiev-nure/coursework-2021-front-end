@@ -66,7 +66,18 @@ export const enLang = {
     lockerUsageLogs: "Locker Usage Logs",
     themes: "Themes",
     orders: "Orders",
-    schedules: "Schedules"
+    schedules: "Schedules",
+    opened: "Opened",
+    closed: "Closed",
+    status: "Status",
+    yes: "Yes",
+    no: "No",
+    toClose: "Close",
+    toOpen: "Open",
+    toEnable: "Enable",
+    toDisable: "Disable",
+    tools: "Tools",
+    schedule: "Schedule"
 }
 
 export const uaLang = {
@@ -137,5 +148,16 @@ export const uaLang = {
     lockerUsageLogs: "Журнал використання осередків",
     themes: "Теми замовлень",
     orders: "Замовлення",
-    schedules: "Графіки"
+    schedules: "Графіки",
+    opened: "Відчинено",
+    closed: "Зачинено",
+    status: "Статус",
+    yes: "Так",
+    no: "Ні",
+    toClose: "Зачинити",
+    toOpen: "Відчинити",
+    toEnable: "Вімкнути",
+    toDisable: "Вимкнути",
+    tools: "Інструменти",
+    schedule: "Розклад"
 }

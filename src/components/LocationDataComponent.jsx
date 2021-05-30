@@ -79,7 +79,7 @@ class LocationData extends Component {
     updateData(event) {
         event.preventDefault();
         var payload = {
-            id: this.state.selectedId,
+            id: parseInt(this.state.selectedId),
             locationName: this.state.selectedName,
             address: this.state.selectedAddress,
             creationDate: this.state.selectedDate

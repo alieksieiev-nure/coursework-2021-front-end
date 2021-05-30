@@ -5,15 +5,34 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { Col, Row } from 'reactstrap';
 import SideBar from './components/SideBarComponent';
-import Cookies from 'js-cookie';
-import { NotFound } from './navigation/NotFound';
 import { LOGIN, REGISTRATION, ROOT } from './navigation/CONSTANTS';
 import Login from './components/LoginComponent';
 import { getCookie } from './config/getCookie';
 import Registration from './components/RegistrationComponent';
+import { baseUrl } from './config/baseUrl';
+import Cookies from 'js-cookie';
 
 function App() {
-    if (getCookie('secret') !== null) {
+    if (getCookie('role') !== null) {
+        fetch(baseUrl + "Authenfication/CheckRole?token=" + getCookie('secutiryToken'), {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+            credentials: 'include'
+        })
+            .then(response => response.text())
+            .then(
+                (response) => {
+                    Cookies.set("role", response);
+                },
+                (error) => {
+                    console.log(error);
+                });
+    }
+
+    if (getCookie('role') !== null) {
         return (
             <div className="App">
                 <BrowserRouter>

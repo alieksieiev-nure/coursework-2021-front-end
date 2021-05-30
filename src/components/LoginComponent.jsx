@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import { Form, Col, Row, Input, Label, Button } from 'reactstrap';
 import { baseUrl } from "../config/baseUrl";
+import { getCookie } from "../config/getCookie";
 import { GetLocal } from "../config/provideLocalization";
 
 
@@ -44,25 +45,34 @@ class Login extends Component {
             Login: this.state.loginData,
             Password: this.state.passwordData
         }
-        // axios.post(baseUrl + "Authenfication/Login", payload);
+
         fetch(baseUrl + "Authenfication/Login", {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
-                Accept: 'application/json, text/plain, */*',
+                'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json; charset=UTF-8'
             },
             credentials: 'include'
         })
-        .then(response => {
-            if (response.ok) {
-                event.preventDefault();
-                Cookies.set('secret', '1');
-                window.location.href = "/userdata";
-            } else {
-                window.location.href = "/login";
-            }
-        })
+            .then(response => response.json())
+            .then(
+                (response) => {
+                    console.log(response);
+                    Cookies.set("secutiryToken", response.securityToken);
+                    Cookies.set("role", response.role);
+                    if (getCookie('role') === 'Admin') {
+                        window.location.href = "/userdata";
+                    } else if (getCookie('role') === 'Manager') {
+                        window.location.href = "/dashboard";
+                    } else {
+                        window.location.href = "/login";
+                    }
+                },
+                (error) => {
+                    console.log(error);
+                    window.location.href = "/login";
+                });
     }
 
     render() {
@@ -70,8 +80,8 @@ class Login extends Component {
             const local = this.state.local;
             return (
                 <div>
-                    <Row className="d-flex" style={{flex: 1}}>
-                        <Col className="text-center" md={{size: 6}} style={{minHeight:"950px", backgroundColor: "lightgreen", padding:0,margin:0}}></Col>
+                    <Row className="d-flex" style={{ flex: 1 }}>
+                        <Col className="text-center" md={{ size: 6 }} style={{ minHeight: "950px", backgroundColor: "lightgreen", padding: 0, margin: 0 }}></Col>
                         <Col className="mt-5 text-center" md={{ size: 4, offset: 1 }}>
                             <Form className="mt-5" onSubmit={(event) => this.fetchLogin(event)}>
                                 <h3>{local.signIn}</h3>

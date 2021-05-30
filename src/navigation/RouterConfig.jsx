@@ -1,11 +1,8 @@
-import { Redirect, Route, Switch } from "react-router";
+import { Route, Switch } from "react-router";
 import LocationData from "../components/LocationDataComponent.jsx";
-import Login from "../components/LoginComponent.jsx";
-import Registration from "../components/RegistrationComponent.jsx";
 import UserData from "../components/UserDataComponent.jsx";
 import LocationOwnerData from "../components/LocationOwnerDataComponent.jsx";
-import { LOCATION_DATA, LOCATION_OWNER_DATA, LOCKER_DATA, LOCKER_USAGE_LOG_DATA, ORDER_DATA, REGISTRATION, SCHEDULE_DATA, THEME_DATA, USER_DATA } from "./CONSTANTS.jsx";
-import { LOGIN } from "./CONSTANTS.jsx";
+import { LOCATION_DATA, LOCATION_OWNER_DATA, LOCKER_DATA, LOCKER_USAGE_LOG_DATA, MANAGER_DASHBOARD, MANAGER_SCHEDULE, ORDER_DATA, SCHEDULE_DATA, THEME_DATA, USER_DATA } from "./CONSTANTS.jsx";
 import { ROOT } from "./CONSTANTS.jsx";
 import { NotFound } from "./NotFound.jsx";
 import ThemeData from "../components/ThemeDataComponent.jsx";
@@ -13,6 +10,8 @@ import OrderData from "../components/OrderDataComponent.jsx";
 import LockerData from "../components/LockerDataComponent.jsx";
 import LockerUsageLogData from "../components/LockerUsageLogDataComponent.jsx";
 import ScheduleData from "../components/ScheduleDataComponent.jsx";
+import ManagerDashboard from "../components/ManagerDashboardComponent.jsx";
+import LocationSchedule from "../components/ScheduleComponent.jsx";
 
 export const RouterConfig = () => {
     return (
@@ -29,6 +28,9 @@ export const RouterConfig = () => {
                 <Route path={LOCKER_DATA}><LockerData /></Route>
                 <Route path={LOCKER_USAGE_LOG_DATA}><LockerUsageLogData /></Route>
                 <Route path={SCHEDULE_DATA}><ScheduleData/></Route>
+
+                <Route path={MANAGER_DASHBOARD}><ManagerDashboard/></Route>
+                <Route path={MANAGER_SCHEDULE}><LocationSchedule/></Route>
 
                 {/* 404-Not Found */}
                 <Route path="*">
