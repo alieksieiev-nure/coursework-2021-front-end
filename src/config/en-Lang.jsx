@@ -77,7 +77,8 @@ export const enLang = {
     toEnable: "Enable",
     toDisable: "Disable",
     tools: "Tools",
-    schedule: "Schedule"
+    schedule: "Schedule",
+    accept: "Підтвердити"
 }
 
 export const uaLang = {
@@ -159,5 +160,6 @@ export const uaLang = {
     toEnable: "Вімкнути",
     toDisable: "Вимкнути",
     tools: "Інструменти",
-    schedule: "Розклад"
+    schedule: "Розклад",
+    accept: "Підтвердити"
 }

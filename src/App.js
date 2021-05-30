@@ -1,6 +1,6 @@
 import './App.css';
 import RouterConfig from './navigation/RouterConfig';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 import 'rsuite/dist/styles/rsuite-default.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { Col, Row } from 'reactstrap';
@@ -53,9 +53,9 @@ function App() {
                 <BrowserRouter>
                     <Row>
                         <Col md={12}>
-                            <Route exact path={ROOT} component={null} />
-                            <Route path={LOGIN}><Login /></Route>
-                            <Route path={REGISTRATION}><Registration /></Route>
+                            <Route exact path={ROOT} component={null}><Redirect to="/login"/></Route>
+                            <Route exact path={LOGIN}><Login /></Route>
+                            <Route exact path={REGISTRATION}><Registration /></Route>
                         </Col>
                     </Row>
                 </BrowserRouter>

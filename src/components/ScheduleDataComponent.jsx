@@ -381,12 +381,12 @@ class ScheduleData extends Component {
                     </div>
                     <Button color="success" className="mt-2 mb-2 ml-1" onClick={this.toggleNewModal}>+ {local.addNew}</Button>
                     <Table
-                        height={400}
+                        virtualized
+                        height={800}
                         data={this.state.data}
                         onRowClick={data => {
                             console.log(data);
                         }}
-                        wordWrap
                     >
                         <Column width={90} align="center" fixed>
                             <HeaderCell>{local.scheduleId}</HeaderCell>
@@ -398,7 +398,7 @@ class ScheduleData extends Component {
                             <Cell dataKey="locationId" />
                         </Column>
 
-                        <Column width={100}>
+                        <Column width={200}>
                             <HeaderCell>{local.dayOfWeek}</HeaderCell>
                             <Cell dataKey="dayOfWeek" />
                         </Column>
@@ -413,7 +413,7 @@ class ScheduleData extends Component {
                             <Cell dataKey="endTime" />
                         </Column>
 
-                        <Column width={120} fixed="right">
+                        <Column width={190} fixed="right">
                             <HeaderCell>{local.action}</HeaderCell>
                             <Cell>
                                 {rowData => {
