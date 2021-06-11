@@ -333,7 +333,6 @@ class LockerUsageLogData extends Component {
                                                 id="endTime"
                                                 name="endTime"
                                                 value={this.state.selectedEndTime}
-                                                required
                                                 type="datetime-local"
                                                 onChange={(event) => this.handleEndTime(event)}
                                             />

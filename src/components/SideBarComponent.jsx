@@ -93,7 +93,7 @@ class SideBar extends Component {
                                     <Dropdown.Item eventKey="4-1" onSelect={() => this.changeLanguage("ua")}>Українська</Dropdown.Item>
                                     <Dropdown.Item eventKey="4-2" onSelect={() => this.changeLanguage("en")}>English</Dropdown.Item>
                                 </Dropdown>
-                                <Nav.Item eventKey="5" onClick={() => this.exportData()} icon={<Icon icon="export" />}>{local.export}</Nav.Item>
+                                <Nav.Item eventKey="5" onClick={() => this.exportData()} icon={<Icon icon="export" />}>{local.export}/{local.import}</Nav.Item>
                                 <Nav.Item eventKey="6" onClick={() => this.logOut()} icon={<Icon icon="sign-out" />}>{local.signOut}</Nav.Item>
                             </Nav>
                         </Sidenav.Body>
